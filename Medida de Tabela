@@ -1,0 +1,117 @@
+Tabela = 
+VAR vMesAtual =
+    SELECTEDVALUE ( dCalendar[Mês] )
+VAR vAno =
+    SELECTEDVALUE ( dCalendar[Ano] )
+VAR vFaturamentoAtual =
+    FORMAT ( [FaturamentoAtual], "R$ #0,0.00" )
+VAR vTotalMesAnterior =
+    FORMAT ( [FaturamentoMesAnterior], "R$ #0,0.00" )
+VAR vTotalAnoAnterior =
+    FORMAT ( [FaturamentoMesAnoAnterior], "R$ #0,0.00" )
+VAR vVariacaoMes =
+    FORMAT ( [VariacaoMesAtual], "⮝+0.0%;⮟-0.0%;" )
+VAR vVariacaoAno =
+    FORMAT ( [VariacaoMesAno], "⮝+0.0%;⮟-0.0%;" )
+VAR vFatMercadoInterno =
+    FORMAT ( fFaturamento[FaturamentoInternoAtual], "R$ #0,0.00" )
+VAR vFatMercadoExterno =
+    FORMAT ( fFaturamento[FaturamentoExternoAtual], "R$ #0,0.00" )
+VAR vVariacaoMercadoInternoMesAnterior =
+    FORMAT ( fFaturamento[VariacaoMesAnteriorInterno], "⮝+0.0%;⮟-0.0%;" )
+VAR vVariacaoMercadoExternoMesAnterior =
+    FORMAT ( fFaturamento[VariacaoMesAnteriorExterno], "⮝+0.0%;⮟-0.0%;" )
+VAR vFatMercadoInternoAnterior =
+    FORMAT ( fFaturamento[FaturamentoInternoMesAnterior], "R$ #0,0.00" )
+VAR vFatMercadoExternoAnterior =
+    FORMAT ( fFaturamento[FaturamentoExternoMesAnterior], "R$ #0,0.00" )
+VAR vVariacaoMercadoExternoAnoAnterior =
+    FORMAT ( [VariacaoMesAnoAnteriorExterno], "⮝+0.0%;⮟-0.0%;" )
+VAR vFatMercadoInternoMesAnoAnterior =
+    FORMAT ( fFaturamento[FaturamentoInternoMesAnoAnterior], "R$ #0,0.00" )
+VAR vFatMercadoExternoMesAnoAnterior =
+    FORMAT ( fFaturamento[FaturamentoExternoMesAnoAnterior], "R$ #0,0.00" )
+VAR vVariacaoMercadoInternoAnoAnterior =
+    FORMAT ( [VariacaoMesAnoAnteriorInterno], "⮝+0.0%;⮟-0.0%;" ) 
+RETURN
+    "
+<body>
+    <style>
+
+        *{
+            margin: 0%;
+            padding: 0;
+        }
+        .demo {            
+            text-align: center;
+            background-color: rgb(100, 100, 100);
+            width: 100%;
+        }
+        .demo th {
+            border:#ffffff; 
+            background:#8f8f8f;
+            border-width: 1px;
+            color: #fffdfd;
+        }
+        .demo td {
+            background-color: rgb(255, 255, 255);
+            border-width: 1px;
+            color: #757474;
+        }
+        .title{
+            color: #757474;
+            font: 1.2em sans-serif;
+            text-align: left;
+            font-weight: 700;
+        }
+    </style>
+    <table class='demo'>
+        <caption class='title'></caption>
+        <thead>
+        <tr>
+            <th>Métrica</th>
+            <th>Total</th>
+            <th>Mercado Interno</th>
+            <th>Mercado Externo</th>
+        </tr>
+        </thead>
+        <tbody>
+ <tr>
+                <td>Mês Atual </td>
+                <td>" & vFaturamentoAtual & "</td>
+                <td>" & vFatMercadoInterno & "</td>
+                <td>" & vFatMercadoExterno & "</td>
+            </tr>
+
+            <tr>
+               <td>Mês Anterior</td>
+                <td>" & vTotalMesAnterior & "</td>
+                <td>" & vFatMercadoInternoAnterior & "</td>
+                <td>" & vFatMercadoExternoAnterior & "</td>
+            </tr>   
+
+        <tr>
+            <td>△%</td>
+                <td>" & vVariacaoMes & "</td>
+                <td>" & vVariacaoMercadoInternoMesAnterior & "</td>
+                <td>" & vVariacaoMercadoExternoMesAnterior & "</td>
+        </tr>  
+         
+        <tr>
+            <td> Mês Ano Anterior</td>
+                <td>" & vTotalAnoAnterior & "</td>
+                <td>" & vFatMercadoInternoMesAnoAnterior & "</td>
+                <td>" & vFatMercadoExternoMesAnoAnterior & "</td>
+        </tr>
+ 
+        <tr>
+            <td> △%</td>
+            <td>" & vVariacaoAno & "</td>
+            <td>" & vVariacaoMercadoInternoAnoAnterior & "</td>
+            <td>" & vVariacaoMercadoExternoAnoAnterior & "</td>
+        </tr>
+
+        </tbody>
+    </table>
+</body>
+"
