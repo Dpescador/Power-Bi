@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela HTML para Power BI</title>
+</head>
+<body>
+    <style>
+
+        *{
+            margin: 0%;
+            padding: 0;
+        }
+        .tabela {            
+            text-align: center; /*Alinha o texto*/
+            background-color: #e6e6e6; /*Cor da linha*/
+            width: 100%; /*Tamanho*/
+        }
+        .tabela th {
+            background:#838080; /*Cor de fundo cabeçalho*/
+            border-width: 1px; /*Espessura borda*/
+            color: #f5f1f1; /*Cor da fonte título*/
+        }
+        .tabela td {
+            background-color: rgb(255, 255, 255); /*Cor das células*/
+            color: #757474; /*Cor do texto */
+        }
+        .title{
+            color: #757474; /*Cor do título da tabela */
+            font: 1.2em sans-serif;
+            text-align: left; /*Alinhamento*/
+            font-weight: bold; /*Negrito*/
+            background-color: #e6e6e6;
+            border: 1px;
+        }
+
+    </style>
+    <table class="tabela">
+        <caption class="title">Título da Tabela</caption> 
+        <thead>
+        <tr>
+            <th>Métrica</th>
+            <th>Total</th>
+            <th>Mercado Interno</th>
+            <th>Mercado Externo</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mês Atual </td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+
+            <tr>
+               <td>Mês Anterior</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            <tr>   
+
+            <tr>
+               <td>△%</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            <tr>
+
+            <tr>
+               <td>Mês Ano Anterior</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            <tr>  
+
+            <tr>
+               <td>△%</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            <tr>   
+      
+        </tbody>
+    </table>
+</body>
+</html>
